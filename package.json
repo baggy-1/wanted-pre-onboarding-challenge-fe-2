@@ -4,9 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "doc": "jsdoc -c jsdoc.json"
+    "doc": "jsdoc -c jsdoc.json",
+    "doc:deploy": "yarn doc && gh-pages -d docs"
   },
   "devDependencies": {
+    "clean-jsdoc-theme": "^4.2.3",
+    "gh-pages": "^5.0.0",
     "jsdoc": "^4.0.0"
-  }
+  },
+  "homepage": "https://chigomuh.github.io/wanted-pre-onboarding-challenge-fe-2/"
 }
