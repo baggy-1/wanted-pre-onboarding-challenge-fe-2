@@ -10,7 +10,8 @@
   "devDependencies": {
     "clean-jsdoc-theme": "^4.2.3",
     "gh-pages": "^5.0.0",
-    "jsdoc": "^4.0.0"
+    "jsdoc": "^4.0.0",
+    "typescript": "^4.9.5"
   },
   "homepage": "https://chigomuh.github.io/wanted-pre-onboarding-challenge-fe-2/"
 }
