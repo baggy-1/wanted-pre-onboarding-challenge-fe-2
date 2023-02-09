@@ -3,7 +3,8 @@
  * @callback getTodos
  * @returns {Promise<Todo[]>}
  */
-export const getTodos = () => {};
+type GetTodos = () => Promise<Todo[]>;
+// export const getTodos = () => {};
 
 /**
  * 특정 Todo를 가져온다.
@@ -11,7 +12,8 @@ export const getTodos = () => {};
  * @param {number} id - 가져올 Todo 아이디
  * @returns {Promise<Todo>} - ID에 해당하는 Todo
  */
-export const getTodoById = () => {};
+type GetTodoById = (id: number) => Promise<Todo>;
+// export const getTodoById = () => {};
 
 /**
  * 새로운 Todo를 생성한다.
@@ -22,7 +24,12 @@ export const getTodoById = () => {};
  * @param {Tag[] | undefined} [body.tags] - Todo 태그들
  * @returns {Promise<Todo>} - 생성된 Todo
  */
-export const createTodo = () => {};
+type CreateTodo = (body: {
+  content: string;
+  category: string;
+  tags?: Tag[];
+}) => Promise<Todo>;
+// export const createTodo = () => {};
 
 /**
  * 특정 Todo를 수정한다.
@@ -35,14 +42,24 @@ export const createTodo = () => {};
  * @param {Tag[] | undefined} [body.tags] - Todo 태그들
  * @returns {Promise<Todo>} - 수정된 Todo
  */
-export const updateTodo = () => {};
+type UpdateTodo = (
+  id: number,
+  body: {
+    content: string;
+    completed: boolean;
+    category: string;
+    tags?: Tag[];
+  }
+) => Promise<Todo>;
+// export const updateTodo = () => {};
 
 /**
  * 모든 Todo를 삭제한다.
  * @callback deleteTodos
  * @returns {Promise<void>}
  */
-export const deleteTodos = () => {};
+type DeleteTodos = () => Promise<void>;
+// export const deleteTodos = () => {};
 
 /**
  * 특정 Todo를 삭제한다.
@@ -50,7 +67,8 @@ export const deleteTodos = () => {};
  * @param {number} id - 삭제할 Todo 아이디
  * @return {Promise<void>}
  */
-export const deleteTodoById = () => {};
+type DeleteTodoById = (id: number) => Promise<void>;
+// export const deleteTodoById = () => {};
 
 /**
  * 특정 Todo의 모든 태그를 삭제한다.
@@ -58,7 +76,8 @@ export const deleteTodoById = () => {};
  * @param {number} id - 삭제할 Todo 아이디
  * @returns {Promise<void>}
  */
-export const deleteTodoTags = () => {};
+type DeleteTodoTags = (id: number) => Promise<void>;
+// export const deleteTodoTags = () => {};
 
 /**
  * 특정 Todo의 특정 태그를 삭제한다.
@@ -67,4 +86,5 @@ export const deleteTodoTags = () => {};
  * @param {number} tagId - 삭제할 tag 아이디
  * @returns {Promise<void>}
  */
-export const deleteTodoTagById = () => {};
+type DeleteTodoTagById = (id: number, tagId: number) => Promise<void>;
+// export const deleteTodoTagById = () => {};
